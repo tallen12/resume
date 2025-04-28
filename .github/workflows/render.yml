@@ -26,8 +26,8 @@ jobs:
         run: ls
       - name: Push compiled PDF to repo
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "resume-github-actions[bot]"
+          git config user.email "209554177+resume-github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
           git commit -m 'build pdf from CI' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
