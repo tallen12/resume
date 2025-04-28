@@ -6,8 +6,15 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
       - name: Set up Git repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
       - name: Use redacted PII
         run: mv redacted-pii.tex pii.tex
       - name: Compile LaTeX document
@@ -19,6 +26,8 @@ jobs:
         run: ls
       - name: Push compiled PDF to repo
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
           git commit -m 'build pdf from CI' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
