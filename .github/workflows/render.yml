@@ -36,3 +36,6 @@ jobs:
             -F commitMessage="automatic resume render" \
             -F files[][path]="resume.pdf" -F files[][contents]=$(base64 -w0 resume.pdf) \
             -F 'query=@.github/api/createCommitOnBranch.gql'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          BRANCH: "main"
