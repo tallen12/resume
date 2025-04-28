@@ -1,0 +1,21 @@
+name: Build LaTeX document
+on: 
+  push:
+    branches: [ "main" ]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Use redacted PII
+        run: mv redacted-pii.tex pii.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: resume.tex
+          working_directory: ./
+      - name: Push compiled PDF to repo
+        run: |
+          git commit resume.pdf -m 'build pdf from CI' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
