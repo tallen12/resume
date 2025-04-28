@@ -1,0 +1,45 @@
+name: 'Render and Commit Resume'
+description: 'Render and Commit Resume'
+inputs:
+  access-token:  
+    description: 'Github App access toke'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout latest build branch
+      shell: bash
+      run: |
+        git checkout latest-resume-build || git checkout -b latest-resume-build
+    - name: Rebase latest master
+      shell: bash
+      run: |
+        git rebase main
+    - name: Use redacted info
+      shell: bash
+      run: mv redacted.tex secret.tex
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: resume.tex
+        working_directory: ./
+    - name: Rename example
+      shell: bash
+      run: |
+        mv resume.pdf redacted-resume.pdf
+    - name: Stage changes
+      shell: bash
+      run: |
+        git add redacted-resume.pdf
+    - name: Commit
+      uses: dsanders11/github-app-commit-action@v1
+      with:
+        message: 'automated resume update'
+        fail-on-no-changes: false
+        token: ${{ inputs.access-token }}
+    - name: Create PR
+      shell: bash
+      run: |
+        gh pr create -B main -H latest-resume-build --title 'Auto resume update' --body 'Created by Github action'
+      env:
+          GITHUB_TOKEN: ${{ inputs.access-token }}
