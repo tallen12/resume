@@ -29,5 +29,10 @@ jobs:
           git config user.name "resume-github-actions[bot]"
           git config user.email "209554177+resume-github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
-          git commit -m 'build pdf from CI' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          gh api graphql \
+            -F $githubRepository="owner/repo" \
+            -F branchName="main" \
+            -F expectedHeadOid=$(git rev-parse HEAD) \
+            -F commitMessage="automatic resume render" \
+            -F files[][path]="resume.pdf" -F files[][contents]=$(base64 -w0 resume.pdf) \
+            -F 'query=@.github/api/createCommitOnBranch.gql'
