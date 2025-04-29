@@ -47,6 +47,7 @@ runs:
       uses: dsanders11/github-app-commit-action@v1
       with:
         message: 'automated resume update'
+        fail-on-no-changes: false
         token: ${{ inputs.access-token }}
     - name: Create PR
       shell: bash
