@@ -13,6 +13,7 @@ runs:
         root_file: resume.tex
         working_directory: ./
     - name: Stage changes
+      shell: bash
       run: |
         git add resume.pdf
     - name: Commit
