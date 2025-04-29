@@ -47,11 +47,10 @@ runs:
       uses: dsanders11/github-app-commit-action@v1
       with:
         message: 'automated resume update'
-        fail-on-no-changes: false
         token: ${{ inputs.access-token }}
     - name: Create PR
       shell: bash
       run: |
-        gh pr create -B main -H latest-resume-build --title 'Auto resume update' --body 'Created by Github action'
+        gh pr create -B ${{ inputs.branch }} -H latest-resume-build-for-${{ inputs.branch }} --title 'Auto resume update for ${{ inputs.branch }}' --body 'Created by Github action'
       env:
           GITHUB_TOKEN: ${{ inputs.access-token }}
