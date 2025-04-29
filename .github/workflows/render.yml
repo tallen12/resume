@@ -35,7 +35,7 @@ jobs:
       - name: Push compiled PDF to repo
         run: |
           gh api graphql \
-            -F $githubRepository=$GITHUB_REPOSITORY \
+            -F githubRepository=$GITHUB_REPOSITORY \
             -F branchName=$BRANCH \
             -F expectedHeadOid=$(git rev-parse HEAD) \
             -F commitMessage="chore: commit file" \
