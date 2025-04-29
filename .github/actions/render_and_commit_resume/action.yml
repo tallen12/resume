@@ -5,6 +5,8 @@ inputs:
     description: 'Github App access toke'
     required: true
 runs:
+  using: "composite"
+  steps:
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@master
       with:
