@@ -12,10 +12,14 @@ runs:
       with:
         root_file: resume.tex
         working_directory: ./
+    - name: Rename example
+      shell: bash
+      run: |
+        mv resume.pdf redacted-resume.pdf
     - name: Stage changes
       shell: bash
       run: |
-        git add resume.pdf
+        git add redacted-resume.pdf
     - name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
