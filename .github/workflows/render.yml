@@ -20,7 +20,7 @@ jobs:
             resume:
               - resume.tex
       - name: Render and Commit Resume
-        # if: steps.resume_changed.outputs.resume == 'true'
+        if: steps.resume_changed.outputs.resume == 'true'
         uses: ./.github/actions/render_and_commit_resume
         with:
           access-token: ${{ steps.app-token.outputs.token }}
