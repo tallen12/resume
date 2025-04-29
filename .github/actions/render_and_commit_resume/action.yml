@@ -2,20 +2,28 @@ name: 'Render and Commit Resume'
 description: 'Render and Commit Resume'
 inputs:
   access-token:  
-    description: 'Github App access toke'
+    description: 'Github App access token'
+    required: true
+  branch:
+    description: 'Github branch this is on'
     required: true
 runs:
   using: "composite"
   steps:
     - uses: mfinelli/setup-imagemagick@v6
+    - name: Install ghostscript
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install ghostscript -y
     - name: Checkout latest build branch
       shell: bash
       run: |
-        git checkout latest-resume-build || git checkout -b latest-resume-build
+        git checkout latest-resume-build-for-${{ inputs.branch }} || git checkout -b latest-resume-build-for-${{ inputs.branch }}
     - name: Rebase latest master
       shell: bash
       run: |
-        git rebase main
+        git rebase ${{ inputs.branch }}
     - name: Use redacted info
       shell: bash
       run: mv redacted.tex secret.tex
@@ -30,11 +38,11 @@ runs:
         mv resume.pdf redacted-resume.pdf
     - name: Convert to PNG using imagemagick
       shell: bash
-      run: convert -density 150 redacted-resume.pdf -quality 90 redacted-resume.png
+      run: magick -density 150 redacted-resume.pdf -quality 90 -flatten -sharpen 0x1.0 redacted-resume.png
     - name: Stage changes
       shell: bash
       run: |
-        git add redacted-resume.pdf
+        git add redacted-resume.pdf redacted-resume.png
     - name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
@@ -44,6 +52,6 @@ runs:
     - name: Create PR
       shell: bash
       run: |
-        gh pr create -B main -H latest-resume-build --title 'Auto resume update' --body 'Created by Github action'
+        gh pr create -B ${{ inputs.branch }} -H latest-resume-build-for-${{ inputs.branch }} --title 'Auto resume update for ${{ inputs.branch }}' --body 'Created by Github action'
       env:
           GITHUB_TOKEN: ${{ inputs.access-token }}
