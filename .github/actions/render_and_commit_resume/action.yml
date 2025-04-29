@@ -7,6 +7,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: mfinelli/setup-imagemagick@v6
     - name: Checkout latest build branch
       shell: bash
       run: |
@@ -27,6 +28,9 @@ runs:
       shell: bash
       run: |
         mv resume.pdf redacted-resume.pdf
+    - name: Convert to PNG using imagemagick
+      shell: bash
+      run: convert -density 150 redacted-resume.pdf -quality 90 redacted-resume.png
     - name: Stage changes
       shell: bash
       run: |
