@@ -25,6 +25,6 @@ jobs:
         run: mv redacted-pii.tex pii.tex
       - name: Render and Commit Resume
         if: steps.resume_changed.outputs.resume == 'true'
-        uses: ./.github/actions/hello-world-composite-action
+        uses: ./.github/actions/render_and_commit_resume
         with:
           access-token: ${{ steps.app-token.outputs.token }}
