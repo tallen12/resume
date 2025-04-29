@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
-      - uses: dorny/paths-filter@v3
+      - uses: dorny/paths-filter@v3.0.2
         id: resume_changed
         with:
-         branch: ${{ github.head_ref || github.ref_name }}
+         base: ${{ github.head_ref || github.ref_name }}
          filters: |
             resume:
               - resume.tex
