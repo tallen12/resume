@@ -23,19 +23,8 @@ jobs:
               - resume.tex
       - name: Use redacted PII
         run: mv redacted-pii.tex pii.tex
-      - name: Compile LaTeX document
+      - name: Render and Commit Resume
         if: steps.resume_changed.outputs.workflows == 'true'
-        uses: xu-cheng/latex-action@master
+        uses: ./.github/actions/hello-world-composite-action
         with:
-          root_file: resume.tex
-          working_directory: ./
-      - name: Stage changes
-        if: steps.resume_changed.outputs.workflows == 'true'
-        run: |
-          git add resume.pdf
-      - name: Commit
-        if: steps.resume_changed.outputs.workflows == 'true'
-        uses: dsanders11/github-app-commit-action@v1
-        with:
-          message: 'feat: my changes'
-          token: ${{ steps.app-token.outputs.token }}
+          access-token: ${{ steps.app-token.outputs.token }}

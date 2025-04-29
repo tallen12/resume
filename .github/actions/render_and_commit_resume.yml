@@ -1,0 +1,22 @@
+name: 'Render and Commit Resume'
+description: 'Render and Commit Resume'
+inputs:
+  access-token:  
+    description: 'Github App access toke'
+    required: true
+runs:
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: resume.tex
+        working_directory: ./
+    - name: Stage changes
+      run: |
+        git add resume.pdf
+    - name: Commit
+      uses: dsanders11/github-app-commit-action@v1
+      with:
+        message: 'feat: my changes'
+        token: ${{ inputs.access-token }}
+
+
