@@ -37,7 +37,7 @@ runs:
     - name: Stage changes
       shell: bash
       run: |
-        git add redacted-resume.pdf
+        git add redacted-resume.pdf redacted-resume.png
     - name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
