@@ -22,9 +22,9 @@ jobs:
             resume:
               - redacted-resume.tex
       - name: Use redacted
-        run: mv redacted.tex pii.tex
+        run: mv redacted.tex secret.tex
       - name: Render and Commit Resume
-        if: steps.resume_changed.outputs.resume == 'true'
+        # if: steps.resume_changed.outputs.resume == 'true'
         uses: ./.github/actions/render_and_commit_resume
         with:
           access-token: ${{ steps.app-token.outputs.token }}

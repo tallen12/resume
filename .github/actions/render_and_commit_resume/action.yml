@@ -23,7 +23,7 @@ runs:
     - name: Commit
       uses: dsanders11/github-app-commit-action@v1
       with:
-        message: 'feat: my changes'
+        message: 'automated resume update'
         token: ${{ inputs.access-token }}
 
 
