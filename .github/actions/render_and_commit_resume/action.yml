@@ -16,6 +16,11 @@ runs:
       shell: bash
       run: |
         mv resume.pdf redacted-resume.pdf
+    - name: Create Branch
+      uses: peterjgrainger/action-create-branch@v2.0.1
+      with:
+          # The branch to create
+          branch: resume-update
     - name: Stage changes
       shell: bash
       run: |
@@ -25,5 +30,9 @@ runs:
       with:
         message: 'automated resume update'
         token: ${{ inputs.access-token }}
-
-
+    - name: Create PR
+      shell: bash
+      run: |
+        gh pr create -B main -H resume-update --title 'Auto resume update' --body 'Created by Github action'
+      env:
+          GITHUB_TOKEN: ${{ inputs.access-token }}
