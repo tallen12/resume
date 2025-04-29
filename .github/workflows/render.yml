@@ -16,6 +16,7 @@ jobs:
       - uses: dorny/paths-filter@v3
         id: resume_changed
         with:
+         branch: ${{ github.head_ref || github.ref_name }}
          filters: |
             resume:
               - resume.tex
