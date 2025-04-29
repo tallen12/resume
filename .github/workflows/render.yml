@@ -31,8 +31,8 @@ jobs:
             -F branchName=$BRANCH \
             -F expectedHeadOid=$(git rev-parse HEAD) \
             -F commitMessage="chore: commit file" \
-            -F files[][path]="README.md" -F files[][contents]=$(base64 -w0 resume.pdf.md) \
+            -F files[][path]="README.md" -F files[][contents]=$(base64 -w0 resume.pdf) \
             -F 'query=@.github/api/createCommitOnBranch.gql'
         env:
-          GH_TOKEN: $
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           BRANCH: "main"
