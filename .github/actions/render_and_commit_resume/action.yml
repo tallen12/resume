@@ -33,7 +33,7 @@ runs:
         mv resume.pdf redacted-resume.pdf
     - name: Convert to PNG using imagemagick
       shell: bash
-      run: convert -density 150 redacted-resume.pdf -quality 90 redacted-resume.png
+      run: magick convert -density 150 redacted-resume.pdf -quality 90 redacted-resume.png
     - name: Stage changes
       shell: bash
       run: |
