@@ -2,7 +2,10 @@ name: 'Render and Commit Resume'
 description: 'Render and Commit Resume'
 inputs:
   access-token:  
-    description: 'Github App access toke'
+    description: 'Github App access token'
+    required: true
+  branch:
+    description: 'Github branch this is on'
     required: true
 runs:
   using: "composite"
@@ -11,11 +14,11 @@ runs:
     - name: Checkout latest build branch
       shell: bash
       run: |
-        git checkout latest-resume-build || git checkout -b latest-resume-build
+        git checkout latest-resume-build-for-${{ inputs.branch }} || git checkout -b latest-resume-build-for-${{ inputs.branch }}
     - name: Rebase latest master
       shell: bash
       run: |
-        git rebase main
+        git rebase ${{ inputs.branch }}
     - name: Use redacted info
       shell: bash
       run: mv redacted.tex secret.tex

@@ -1,7 +1,5 @@
 name: Build LaTeX document
-on: 
-  push:
-    branches: [ "main" ]
+on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -26,3 +24,4 @@ jobs:
         uses: ./.github/actions/render_and_commit_resume
         with:
           access-token: ${{ steps.app-token.outputs.token }}
+          branch: ${{ github.head_ref || github.ref_name }}
