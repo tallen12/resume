@@ -27,8 +27,8 @@
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
-\usepackage[default]{sourcesanspro}
-
+% \usepackage[default]{sourcesanspro}
+\usepackage[sfdefault,lf]{carlito}
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
@@ -73,7 +73,7 @@
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#3} & {\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
 \newcommand{\resumeSubheadingWithDescription}[5]{
@@ -87,7 +87,7 @@
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
+      \textit{\small#1} & {\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -101,7 +101,7 @@
 \newcommand{\resumeExprienceProject}[1]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      {\small\textit{Highlighted Project: }}{\small\textbf{#1}}  \\
+      {\small{Highlighted Project: }}{\small\textbf{#1}}  \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -127,7 +127,7 @@
 % \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Tyler Allen} \\ \vspace{1pt}
+    \textbf{\Huge Tyler Allen} \\ \vspace{1pt}
     \small {\PhoneNumber} $|$ \href{mailto:{\EmailAddress}}{\underline{\EmailAddress}} $|$ 
     \href{https://github.com/tallen12}{\underline{github.com/tallen12}}
 \end{center}
