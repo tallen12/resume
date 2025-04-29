@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 jobs:
   build_latex:
-    if: ${{ !contains(github.event.head_commit.author, 'resume-github-actions[bot]')}}
+    if: ${{ github.event.head_commit.author=='resume-github-actions[bot]'}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v1
