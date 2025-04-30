@@ -150,25 +150,16 @@
       {EvidentID}{November 2016 -- April 2025}
       {Software Engineer}{Atlanta, GA}
       \resumeItemListStart
-        \resumeItem{Developed from scratch, in collaboration with a team of the initial three developers, the core platform for securely storing and sharing personally identifiable information using Public Key Infrastructure (PKI) and end-to-end encryption in a fast-paced startup environment; implemented in Scala and Python and remains in use as a core part of the business today}
-        \resumeItem{Implemented core business logic across multiple backend services using Python to extract data from documents and external APIs, enabling secure and automated Risk, Trust, and Safety assessments for domains such as insurance, criminal background checks, business verification, and identity validation}
-        \resumeItem{Implemented and designed multiple REST APIs using Flask and FastAPI frameworks, supporting authorization through OAuth, authorization tokens, and API keys, enabling secure access to the platform for both front end developers and external API users allowing for more customer integrations beyond the initial phone app flow}
-        \resumeItem{Developed a platform that extracts data from insurance documents and automatically evaluates compliance with customer needs, in close collaboration with insurance experts, and delivered a first-in-class product that can meet the needs of any company requiring insurance coverage validation}
+        \resumeItem{ Developed the core backend service in Scala with MongoDB as the database at a fast-paced startup as one of the first engineers at the company; enabling secure sharing of Personally Identifiable Information (PII) with end-to-end encryption using a custom Public Key Infrastructure (PKI) system that remains central to the Evident's platform today}
+        \resumeItem{ Led long-term development and maintenance of a Python service that fetched background check data from multiple APIs, securely processed the data with NLP and other techniques, and automatically evaluated compliance with customer-defined rules and ensured legal requirements under the Fair Credit Reporting Act (FCRA) were met; this service was a critical component of business revenue for several years}
+        \resumeItem{ Led from idea to deployment the implementation of a Python service utilizing a fine-tuned BERT model to better classify raw crime descriptions to FBI crime categories used for automated background checks; achieved a 50\% increase in fully automated checks and significantly reduced manual review time by utilizing model prediction probabilities}
+        \resumeItem{ Led the development a Python REST API service using Flask to centralize all notification and branding configuration in one PostgreSQL DB enabling a consistent API for accessing data for both backend and front end; implemented OAuth for frontend and API keys for backend }
+        \resumeItem{ Led the development a Python REST API using FastAPI for an authentication service for an Emissary API Gateway in Kubernetes; worked closely with Front End developers and DevOps to ensure OAuth based access to backend services worked}
+        \resumeItem{ Developed the backend of the Insurance Verification Service as part of an international team using Scala, Akka, and PostgreSQL; implemented new configurable rules for automated compliance checks and a REST API for document submission and data access and delivered a first in class insurance product}
+        \resumeItem{Mantaiined end-to-end automated testing using PyTest, Selenium and Cucumber to test both frontend and backend workflows with Behavior Driven Development, ensuring thorough regression testing and reliable system functionality}
         \resumeItem{Configured and maintained Helm charts for deploying Python and Scala services on Kubernetes and allowing for automated service deployments through Jenkins CI/CD pipelines, enabling faster and easier deployments}
-        \resumeItem{Maintained end-to-end automated testing using pytest and Selenium to test both frontend and backend workflows, ensuring thorough regression testing and reliable system functionality}
-      \resumeItemListEnd
-    \resumeExprienceProject
-      {Automated Background Check Compliance}
-      \resumeItemListStart
-        \resumeItem{Implemented and maintained a Python-based service that fetches background check data from multiple external APIs, utilizing ML and NLP techniques to automatically evaluate risk and ensure compliance with the Fair Credit Reporting Act (FCRA); this service served as the core component of the company's business for several years}
-        \resumeItem{Implemented a Kubernetes-based service using a fine-tuned BERT model to enhance classification of background check data into known categories for automatic processing, leading to a 50\% increase in automated classifications and a significant reduction in time spent by human reviewers by utilizing classification probabilities}
-        \resumeItem{Maintained an Elixir-based REST API for storing background check data in PostgreSQL, ensuring reliable operation of the background check processing}
-      \resumeItemListEnd
-  \resumeExprienceProject
-      {Evident Platform}
-      \resumeItemListStart
-        \resumeItem{Developed the core REST web service in Scala using AkkaHTTP and MongoDB, providing reliable and scalable backend services for the platform}
-        \resumeItem{Implemented Nginx as a reverse proxy for SSL termination, using custom certificates to authenticate downstream services and secure APIs that return sensitive information}
+        \resumeItem{Maintained a legacy Elixir REST API for storing background check profile data in PostgreSQL DB, ensuring a reliable service for a critical part of the background check service}
+        \resumeItem{Configured and maintained Helm charts for deploying Python and Scala services on Kubernetes and allowing for automated service deployments through Jenkins CI/CD pipelines, enabling faster and easier deployments}
         \resumeItem{Designed and implemented RabbitMQ and REST APIs for internal communication between microservices, selecting the appropriate method based on performance requirements}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
@@ -188,16 +179,18 @@
 
 %
 %-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
+\section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python(10+ years experience), Scala(4+ years experience), Java, Elixir} \\
-     \textbf{Frameworks}{: FastAPI, Flask, AkkaHTTP } \\
-     \textbf{Databases \& Tools}{: MongoDB, PostgreSQL, Redis, Flyway, Alembic} \\
-     \textbf{DevOps}{: AWS EC2, Kubernetes, Docker, Helm, Ansible} \\
-     \textbf{CI/CD \& Testing}{: Jenkins Pipelines, Cucumber, pytest, ScalaTest} \\
-     \textbf{Libraries}{: NumPy, Transformers, Pydantic, Slick} \\
-     \textbf{Technology}{: PKI, ML \& AI Models + Classification}
+     \textbf{Programming Languages}{: Python (10+ years), Scala, Java, Elixir} \\
+     \textbf{Web Frameworks}{: FastAPI (Python), Flask (Python), Akka (Scala), Phoniex (Elixir) } \\
+     \textbf{Databases \& Tools}{: PostgreSQL, MongoDB, Redis, Flyway, Alembic} \\
+     \textbf{Messaging}{: RabbitMQ} \\
+     \textbf{APIs \& Protocols}{: REST APIs, RPC} \\
+     \textbf{Testing}{: Pytest, Selenium, Cucumber, Behavior Driven Design (BDD), Scalatest} \\
+     \textbf{Data Science \& Machine Learning:}{: Numpy, SciPy, TensorFlow, Hugging Face, BERT}\\
+     \textbf{Cloud \& DevOps}{: AWS, S3, EC2, Kubernetes, Docker, Jenkins, Helm, Ansible, Nginx} \\
+     \textbf{Non Technical}{: Experience working with PII, FCRA, Insurance, Risk Decisioning} \\
     }}
  \end{itemize}
 
