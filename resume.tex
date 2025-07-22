@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -19,6 +19,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{xparse}
+\usepackage{setspace}
 \input{glyphtounicode}
 \input{secret.tex}
 
@@ -28,7 +29,7 @@
 % \usepackage[sfdefault]{roboto}
 \usepackage[sfdefault]{noto-sans}
 % \usepackage[sfdefault]{carlito}
-
+% \usepackage[default]{sourcesanspro}
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
@@ -65,23 +66,23 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-1pt}}
+    {#1 \vspace{-.5pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{0pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & {\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 \newcommand{\resumeSubheadingWithDescription}[5]{
-  \vspace{-2pt}\item
+  \vspace{0pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} {\small#4} & \textit{\small #5} \\
-    \end{tabular*}\vspace{-4pt}
+    \end{tabular*}\vspace{-2pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -126,14 +127,10 @@
     \href{https://github.com/tallen12}{\underline{github.com/tallen12}}
 \end{center}
 
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta,GA}
-      {Bachelor of Arts in Computer Science, Focus in AI and Devices}{Aug. 2013 -- May 2016}
-  \resumeSubHeadingListEnd
+\begin{center}{\vspace{7pt}\small 
+Experienced backend software engineer with 9+ years in fast-paced startup environments.
+}
+\end{center}
 
 
 %-----------EXPERIENCE-----------
@@ -143,33 +140,38 @@
       {EvidentID}{Atlanta, GA}
       {Junior Backend Software Engineer}{November 2016 -- December 2017}
       \resumeItemListStart
-        \resumeItem{Developed the core backend service as one of the first four engineers at a fast-paced startup, implemented in Scala/Java using Akka and MongoDB and deployed on AWS; enabling cryptographically secure sharing of Personally Identifiable Information using a Public Key Infrastructure that is still core to the business today}
-        \resumeItem{Implemented several Python data processing microservices that extracted additional data from third party sources by fetching data using web scraping and/or APIs; the fast development allowed the company to expand services quickly}
-        \resumeItem{Managed Ansible playbooks for deployment of services to AWS and configuration of Nginx}
-        \resumeItem{Performed code reviews on GitHub}
+        \resumeItem{Developed, as one of the first four developers at a fast-paced startup, the core backend service for a secure and privacy focused platform to share sensitive data; using Scala/Java and MongoDB}
+        \resumeItem{Developed and deployed several data processing microservices using Python on AWS EC2; forming the basis for the companies core business}
       \resumeItemListEnd
     \resumeSubSubheading
       {Backend Software Engineer}{December 2017 -- January 2021}
       \resumeItemListStart
-        \resumeItem{Led the development and maintenance of a key revenue driving service implemented in Python to fully automate background checks; specifically building data pipelines that fetch data from multiple REST and/or SOAP APIs, use NLP and machine learning to validate and extract data, and evaluate the data against a customer-provided profile to determine compliance and ensure legal requirements from the Fair Credit Reporting Act (FCRA) are met}
-        \resumeItem{Built REST APIs in Flask to support third-party API key access and frontend OAuth flows, simplifying integration with internal and external systems }
-        \resumeItem{Implemented comprehensive end-to-end automated testing with Pytest, Selenium, and Cucumber/Gherkin to implement Behavior Driven Testing enabling regression testing for new features}
-        \resumeItem{Implemented internal communication via RabbitMQ, RPC, and REST APIs based on service and performance needs}
-        \resumeItem{Configured Jenkins workflows for CI/CD to enable automatic running of tests, linting, and Docker builds for both Python and Scala services; ensuring high code quality and enabling automatic deployments to dev environments}
-        \resumeItem{Configured infrastructure using Terraform to add OAuth to new services as needed}
-        \resumeItem{Maintained a REST API in Elixir Phoenix with PostgreSQL to store customer profiles}
+        \resumeItem{Led development of an automated background check service in Python, integrating data from multiple REST/SOAP APIs, using NLP and machine learning to extract and validate information against customer profiles and ensuring FCRA compliance; this service generated 50\% of company revenue during this time}
+        \resumeItem{Implemented comprehensive end-to-end automated testing with Pytest, Selenium, and Cucumber/Gherkin; enabling comprehensive regression testing}
+        \resumeItem{Configured Jenkins workflows for CI/CD, ensuring high code quality and automatic deployments}
+        \resumeItem{Implemented an event-driven architecture using RabbitMQ to handle notification workflows and trigger data processing, improving performance and system scalability}
+        \resumeItem{Developed and maintained a REST API in Elixir Phoenix with PostgreSQL to update customer configuration; enabling self-service and a 90\% reduction in onboarding time for new customers}
+        \resumeItem{Served as on-call backend support during U.S. hours for production issues}
       \resumeItemListEnd
     \resumeSubSubheading
       {Backend Software Engineer II}{January 2021 -- April 2025}
       \resumeItemListStart
-        \resumeItem{Proposed and led the development of a new fine-tuned BERT machine learning model to replace the custom PyTorch CNN that was used to classify background check data; this resulted in a significant increase in accuracy leading to a 50\% reduction in classifications that needed human review and a 90\% reduction in human review time required overall}
-        \resumeItem{Led the development of a Python REST API using Flask to centralize all notification and branding configuration in one PostgreSQL DB, providing a consistent API for accessing configuration data for both backend and frontend systems; implemented OAuth for frontend and API keys for backend}
-        \resumeItem{Led the development of an authentication service for Emissary API Gateway in Azure Kubernetes Service (AKS) using Python and FastAPI; worked closely with frontend developers and DevOps to ensure OAuth-based access to backend services worked correctly through the API Gateway}
-        \resumeItem{Implemented an event-driven architecture using RabbitMQ to handle notification workflows and trigger data processing, improving performance and system scalability }
-        \resumeItem{Developed Insurance Document Verification Service implemented in Scala using Akka, Slick, and PostgreSQL with an international team using Agile and Scrum methods; specifically worked on an API to submit documents to AWS S3 and implemented several evaluation rules for determining compliance of insurance documents}
+        \resumeItem{Proposed and led the development of a new fine-tuned BERT machine learning model to replace the custom PyTorch CNN that was used to classify background check data;  reducing classifications that require human review by 50\%  and review time by 90\%}
+        \resumeItem{Led development of a Flask REST API for centralizing notification and branding configs in PostgreSQL; implemented OAuth and API‑key authentication}
+        \resumeItem{Led the development of a python FastAPI authentication service on AKS via Emissary API Gateway; collaborated with frontend developers and DevOps to ensure OAuth‑based access worked correctly}
+        \resumeItem{Worked with an international remote team to develop an insurance document verification service implemented in Scala using Akka, and PostgreSQL; specifically developed an API to submit documents to AWS S3}
+        \resumeItem{Implemented new workflows reducing the time to develop routine new features from weeks to days}
         \resumeItem{Configured and maintained Helm charts for deploying Python and Scala services to Azure Kubernetes Service; enabling scalable and reliable deployment to both development and production environments}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta,GA}
+      {Bachelor of Arts in Computer Science, Focus in AI and Devices}{Aug. 2013 -- May 2016}
+  \resumeSubHeadingListEnd
 
 % \section{Professional Projects}
 % \resumeSubHeadingListStart
@@ -190,15 +192,14 @@
 
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming Languages:}{ Python (10+ years), Scala/Java(9+ years), Elixir} \\
-     \textbf{Web Frameworks:}{ FastAPI (Python), Flask (Python), Akka (Scala), Phoenix (Elixir) } \\
-     \textbf{Databases:}{ PostgreSQL, MongoDB, Redis, Flyway, Alembic, SQLAlchemy, Slick(Scala), SQL} \\
-     \textbf{Communication Protocols:}{ REST APIs, RPC, RabbitMQ} \\
-     \textbf{Testing:}{ PyTest, Scalatest, Selenium, Cucumber, Behavior Driven Design (BDD)} \\
-     \textbf{Data Science \& Machine Learning:}{ numpy, SciPy, Pytorch, Hugging Face, BERT}\\
-     \textbf{Cloud \& DevOps:}{ Azure, AWS, S3, EC2, Kubernetes, Docker, Jenkins, Helm, Ansible, Nginx} \\
-     \textbf{Developer \& Project Management Tools:}{Git, Github, Jira, Postman} \\
-     \textbf{Non Technical:}{ Agile and Scrum, Working with PII, FCRA, Insurance, Risk Decisioning} \\
+     \textbf{Languages:} Python (10+ yrs), Scala/Java (9+ yrs), Elixir \\
+     \textbf{Frameworks:} FastAPI, Flask, Akka, Phoenix \\
+     \textbf{Databases:} PostgreSQL, MongoDB, Redis, Flyway, Alembic \\
+     \textbf{Messaging \& Communication:} REST APIs, RPC, RabbitMQ \\
+     \textbf{Cloud \& DevOps:} AWS (S3, EC2), Azure (AKS), Kubernetes, Docker, Jenkins, Helm, Ansible, Nginx \\
+     \textbf{Testing \& Automation:} Pytest, Selenium, Cucumber/Gherkin \\
+     \textbf{Tools:} Git, GitHub, Jira, Postman \\
+      \textbf{Professional:} Agile/Scrum, Working with PII, FCRA Compliance, Insurance Domain \\
     }}
  \end{itemize}
 

@@ -20,7 +20,7 @@ runs:
       shell: bash
       run: |
         git checkout latest-resume-build-for-${{ inputs.branch }} || git checkout -b latest-resume-build-for-${{ inputs.branch }}
-    - name: Rebase latest master
+    - name: Rebase latest
       shell: bash
       run: |
         git rebase ${{ inputs.branch }}
