@@ -122,14 +122,13 @@
 \begin{document}
 
 \begin{center}
-    \textbf{\Huge \scshape Tyler Allen} \\ \vspace{1pt}
+    \textbf{\Huge Tyler Allen} \\ \vspace{1pt}
     \small {\PhoneNumber} $|$ \href{mailto:{\EmailAddress}}{\underline{\EmailAddress}} $|$ 
-    \href{https://github.com/tallen12}{\underline{github.com/tallen12}}
+    \href{https://github.com/tallen12}{\underline{github.com/tallen12}} $|$ \href{https://www.linkedin.com/in/tyler-allen-08477a29}{\underline{linkedin.com/in/tallen499}}
 \end{center}
 
 {\vspace{7pt}\small 
-Backend software engineer with 9+ years of experience building scalable APIs, distributed systems, and ML-driven services in startup environments.}
-
+Senior Backend Software Engineer with extensive experience designing and building scalable, secure backend services and APIs in cloud-native environments. Strong background in Python and Scala, distributed systems, and AI-powered services, with a proven ability to deliver reliable, well-tested software in fast-paced, collaborative Agile teams.
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
@@ -137,30 +136,43 @@ Backend software engineer with 9+ years of experience building scalable APIs, di
       {EvidentID}{Atlanta, GA}
       {Backend Software Engineer II}{January 2021 -- April 2025}
       \resumeItemListStart
-        \resumeItem{Proposed, designed and implemented a fine-tuned BERT machine learning model to replace a PyTorch CNN used to classify background check data; reduced manual reviews by 50\% and cut review time by 90\%}
-        \resumeItem{Designed and led the development of a Python FastAPI authentication service for API Gateway on Kubernetes providing OAuth JWT validation for all frontend services; worked closely with frontend engineers and devops to ensure access to the backend services}
-        \resumeItem{Developed backend services for an insurance risk management platform, enabling automated compliance checks on policy documents for 4M+ members; used Scala/Akka and PostgreSQL.}        
+        \resumeItem{Built an AI-powered classification service using a fine-tuned BERT model to automate review of background check data, reducing manual review time from 3 hours to 5 minutes (98\% efficiency gain)}
+        % \resumeItem{Built a AI–powered classification service using a fine-tuned BERT model to automate background check review, reducing manual review time from 3 hours to 5 minutes (98\% efficiency gain)}
+        \resumeItem{Modernized the Python stack with FastAPI and async libraries, Poetry for dependency management, standardized Docker-based automated testing and documentation to accelerate developer productivity}
+        \resumeItem{Designed a FastAPI Forward-Auth microservice for Emissary Ingress on Kubernetes, centralizing OAuth JWT validation and mapping requests to an internal user model; collaborated with Frontend and DevOps teams}
+        \resumeItem{Led the development of a REST API in Python using Flask and SQLAlchemy to centralize notification and branding configuration for backend and frontend services; delivered in less than 1 month to meet a critical release deadline}
+        % \resumeItem{Led the development of a Python Flask REST API centralizing notification and branding configuration for internal and external users; used PostgreSQL and SQLAlchemy, migrations handled by alembic}
+        \resumeItem{Built Scala-based backend services for insurance document ingestion and automation, processing 30K policies per month using Akka-HTTP, Slick, PostgreSQL and AWS S3}
+        \resumeItem{Collaborated with Product Managers to translate rotuine feature requests into repeatable workflows and used Python scripting to automate, cutting feature delivery time from weeks to 2–3 days}
+        % \resumeItem{Maintained public facing API documentation using OpenAPI and Swagger}
+
+        % \resumeItem{Developed and maintained a REST API in Elixir Phoenix with PostgreSQL to manage client configurations; enabled client self-service and reduced onboarding time for new client}
+        % \resumeItem{Built functional Scala data-processing workflows for the Insurance Verification service evaluation engine using Akka HTTP, Circe, and Slick, processing 30K+ policies/month}
+        % \resumeItem{Implemented a Scala document submission REST API using Akka HTTP, Tapir, Circe, AWS S3, and PostgreSQL, efficiently processing thousands of documents per day}
         % \resumeItem{Led the development of a Python FastAPI authentication service for Emissary API Gateway on Azure Kubernetes Service to validate OAuth JWTs for all frontend services; collaborated with frontend team closely to ensure OAuth functioned correctly}
-        % \resumeItem{Led the development of a Flask REST API to centralize notification and branding configurations in PostgreSQL; implemented OAuth and API key authentication}
-        \resumeItem{Introduced new workflows and python scripts that reduced development time for routine new features in core services from weeks to days}
-        \resumeItem{Maintained public facing API documentation for various services using OpenAPI and Swagger}
+        % \resumeItem{Led the development of a Flask REST API to centralize notification and branding configurations for internal and external users; implemented in PostgreSQL using SQLAlchemy}
+        % \resumeItem{Led Development of a REST microservice to centralize notification and branding configurations for internal and external services to reduce data duplication; implemented in Python using Flask and SQLAlchemy with PostgreSQL}
+        % \resumeItem{Introduced new workflows and Python scripts that reduced development time for routine new features in core services from weeks to days}
       \resumeItemListEnd
     \resumeSubSubheading
       {Backend Software Engineer}{December 2017 -- January 2021}
       \resumeItemListStart
-        \resumeItem{Led development of an automated background check service in Python, integrating data from multiple REST/SOAP APIs; used NLP and machine learning to extract and validate information against customer profiles while ensuring legal compliance; this service generated 50\% of company revenue during this period}
+        \resumeItem{Led a small Agile team to build an AWS-based automated background check platform, developing Python backend services to collect, integrate, and validate data from REST/SOAP APIs, consumer reports, and court records}
+        \resumeItem{Implemented a JSON rule engine in Python to evaluate background check data against client profiles while maintaining FCRA requirements; service generated over 50\% of company revenue during this time}
+        % \resumeItem{Led 2-3 person Agile team developing an automated background check service on AWS using Python to create data pipelines that integrate REST/SOAP APIs and ML/NLP to validate compliance against client profiles while meeting legal requirements for using FCRA data; generated more than 50\% of company revenue during this time}
         % \resumeItem{Scaled backend services using an event-driven architecture with RabbitMQ, Celery to scale backend Python based services, and Redis to handle caching on internal HTTP routes; resulting in 5x increase in performance}
-        \resumeItem{Scaled backend services with an event-driven architecture using RabbitMQ, Celery for python services, and Redis caching; achieved a 5x performance improvement}
-        \resumeItem{Implemented comprehensive end-to-end automated testing with PyTest, Selenium, and Cucumber/Gherkin for Behavior-Driven Development; enabled thorough regression testing for all services}
-        \resumeItem{Configured Jenkins workflows for CI/CD to run linting, unit and integration tests, and builds using Docker and Helm; enabled automated deployments for development environments}
-        \resumeItem{Developed and maintained a REST API in Elixir Phoenix with PostgreSQL to manage customer configurations; enabled customer self-service and reduced onboarding time by 90\%}
-        \resumeItem{Served as on-call backend support during U.S. hours for to debug and fix production incidents}
+        \resumeItem{Scaled backend microservices with an event-driven architecture using RabbitMQ, Celery for Python services, and Redis and in-memory caching achieving a 5x performance improvement in the background check platform}
+        \resumeItem{Maintained comprehensive end-to-end automated testing with PyTest, Selenium, and Cucumber/Gherkin for Behavior-Driven Development; enabled thorough regression testing for all services}
+        \resumeItem{Configured Jenkins workflows for CI/CD to run linting, unit and integration tests, builds using Docker and Helm, and pushing to PyPi and Docker repositories; enabled automated deployments for development environments}
+        \resumeItem{Diagnosed and resolved production issues through logs and metrics, participating in on-call rotations to ensure system reliability; used Prometheus, Grafana, Logz.io, and Sentry}
       \resumeItemListEnd
     \resumeSubSubheading
       {Junior Backend Software Engineer}{November 2016 -- December 2017}
       \resumeItemListStart
-        \resumeItem{Developed, as one of the first four developers at a fast-paced startup, the core backend service for a secure and privacy focused platform to share sensitive data using end-to-end encryption; using Scala and MongoDB}
-        \resumeItem{Developed and deployed several Python-based data processing microservices on AWS EC2}
+        \resumeItem{Contributed to the core backend of a secure, privacy-focused platform for sharing sensitive data, implemented in Scala and MongoDB}
+        % \resumeItem{Added Firebase support to core platform allowing integration with Android and IOS applications}
+        \resumeItem{Worked within an Agile Scrum team, participating in sprint planning, estimation, code reviews, and retrospectives}
+        \resumeItem{Developed data models and serialization for Evident’s Python SDK and built the first data verification services from scratch; deployed on AWS EC2 with Ansible and Terraform}
       \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -169,7 +181,7 @@ Backend software engineer with 9+ years of experience building scalable APIs, di
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta,GA}
+      {Georgia Institute of Technology}{Atlanta, GA}
       {Bachelor of Science in Computer Science, Focus in AI and Devices}{Aug. 2013 -- May 2016}
   \resumeSubHeadingListEnd
 
@@ -192,12 +204,20 @@ Backend software engineer with 9+ years of experience building scalable APIs, di
 
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages:} Python (10+ yrs), Scala/Java (9+ yrs), Elixir \\
-     \textbf{Frameworks:} FastAPI, Flask, Akka, Phoenix \\
-     \textbf{Databases:} PostgreSQL, MongoDB, Redis  \\
-     \textbf{Cloud \& DevOps:} AWS (S3, EC2), Azure (AKS), Kubernetes, Docker, Helm, Jenkins \\
-     \textbf{Messaging:} RabbitMQ, REST, RPC \\
-     \textbf{Tools:} Git, GitHub, Jira, Postman, Swagger, OpenAPI \\
+    %  \textbf{Languages:} Python, Scala, Elixir \\
+    %  \textbf{Frameworks:} FastAPI, Flask, Akka, Phoenix, PyTorch, HuggingFace, NumPy, nltk \\
+    %  \textbf{Data:} PostgreSQL, MongoDB, Redis, SQLAlchemy, Flyway, Alembic\\
+    %  \textbf{Cloud:} AWS (S3, EC2, IAM), Azure (AKS), Kubernetes, RabbitMQ, REST, JSON-RPC \\
+    %  \textbf{DevOps:} Docker, Helm, Jenkins, Prometheus, Grafana, Sentry, Terraform, Ansible \\
+    %  \textbf{Skills:} Functional and Object-Oriented Programming, System Design and Architecture \\
+    %  \textbf{Tools:} Git, GitHub, Jira, Postman, Swagger, OpenAPI, Agile/Scrum\\
+    \textbf{Languages:} Python, Scala, Elixir \\
+    \textbf{Frameworks:} FastAPI, Flask, Akka, Phoenix, PyTorch, HuggingFace \\
+    \textbf{Data:} PostgreSQL, MongoDB, Redis, SQLAlchemy \\
+    \textbf{Cloud Platforms:} AWS (S3, EC2, IAM), Azure, Kubernetes \\
+    \textbf{Backend Engineering:} REST APIs, Distributed Systems, Event-Driven Architecture \\
+    \textbf{Practices:} Automated Testing, System Design, Agile/Scrum, Functional and Object-Oriented Programming\\
+    \textbf{Tools:} Git, GitHub, Jira, Postman, Swagger, OpenAPI \\
   }}
  \end{itemize}
 
