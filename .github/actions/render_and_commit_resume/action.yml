@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: mfinelli/setup-imagemagick@v6
+    - uses: mfinelli/setup-imagemagick@v8
     - name: Install ghostscript
       shell: bash
       run: |
